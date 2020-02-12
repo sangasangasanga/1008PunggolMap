@@ -2,9 +2,9 @@ import sys
 import json
 import pprint
 
-start = "Blk 140"
-end = "Blk 546"
-current_time = "15:00"
+start = "Blk 140" #enter from bus stop name
+end = "Blk 546" #enter to bus stop name
+current_time = "15:00" #current time
 cost_per_stop = 9999#FOR LESSER NUMBER OF STOPS for lesser transfers, more cost per stop. consider each stop as taking additional time equivalent to driving 1km*"
 cost_per_transfer = 0.1#FOR LESSER TRANSFERStravel time btw transfers, eg waiting time for travel is 15mins = 5km travelled
 print "loading JSON"
@@ -61,7 +61,7 @@ for service, path in routes_map.items():
         next_code = next_route_stop["BusStopCode"]
         graph[curr_code][(next_code, service)] = distance
 
-print "Running BFS"
+print "Algorithm"
 
 def dijkstras(graph, start, end):
     import heapq
@@ -101,6 +101,7 @@ def dijkstras(graph, start, end):
 
 (cost, distance, transfers, path) = dijkstras(graph, stop_desc_map[start]["BusStopCode"], stop_desc_map[end]["BusStopCode"])
 
+# output
 for code, service in path:
     print service, stop_code_map[code]["Description"]
 print len(path), "stops"

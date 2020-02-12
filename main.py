@@ -4,8 +4,8 @@ import json
 import folium
 
 headers = {
-       'AccountKey': 'qBE3CC9FS3C8PBq5TPzX7Q==',
-       'UniqueUserID': '8ecabd56-08a2-e843-0a7a-9944dccf124a',
+       'AccountKey': 'qBE3CC9FS3C8PBq5TPzX7Q==', #avi account key
+       'UniqueUserID': '8ecabd56-08a2-e843-0a7a-9944dccf124a', #avi pw
       'accept': 'application/json'
     }
 
